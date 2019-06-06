@@ -1,0 +1,88 @@
+\documentclass{article}
+
+\usepackage{arxiv}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{lipsum}    % 自動產生亂文
+\usepackage{graphicx}  % 使用圖片
+\usepackage{listings}   % 使用程式碼嵌入
+\usepackage{fontspec}   %加這個就可以設定字體
+\usepackage{xeCJK}       %讓中英文字體分開設置
+\setCJKmainfont{細明體} % SimSun, 標楷體, 設定中文為系統上的字型，而英文不去更動，使用原TeX字型
+\XeTeXlinebreaklocale "zh"             %這兩行一定要加，中文才能自動換行
+\XeTeXlinebreakskip = 0pt plus 1pt     %這兩行一定要加，中文才能自動換行
+\renewcommand{\baselinestretch}{1.5} % 行與行之間的間距加大 1.5 倍
+
+
+\title{從爬山演算法開始學習人工智慧的優化算法}
+
+
+\author{
+  陳鍾誠\thanks{使用註腳來進一步說明}\\
+  金門大學資訊工程系\\
+  \texttt{ccc@nqu.edu.tw} \\
+  %% examples of more authors
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+我們使用爬山演算法，結合編譯器技術，創造了一個自動求的符號的解方程式套件 eq6.js，雖然並非所有方程式都能求得符號解，但是對《線性方程組、多項式與常係數微分方程式》而言，通常可以求得正確解答，而對其他更複雜的微分方程或偏微分方程，則無法保證能得到正確解答。
+\end{abstract}
+
+
+% keywords can be removed
+\keywords{方程式求解\and 符號微分\and 人工智慧}
+
+\input{body}
+
+
+\bibliographystyle{unsrt}  
+%\bibliography{references}  %%% Remove comment to use the external .bib file (using bibtex).
+%%% and comment out the ``thebibliography'' section.
+
+
+%%% Comment out this section when you \bibliography{references} is enabled.
+\begin{thebibliography}{1}
+
+\bibitem{}
+陳鍾誠
+\newblock 爬山演算法
+\newblock (2017) github pages, e103.
+
+\bibitem{10.7717/peerj-cs.103}
+Meurer, Aaron and Smith, Christopher P. and Paprocki, Mateusz
+\newblock SymPy: symbolic computing in Python,
+\newblock (2017) SymPy: symbolic computing in Python. PeerJ Computer Science 3:e103.
+
+\bibitem{kour2014real}
+George Kour and Raid Saabne.
+\newblock Real-time segmentation of on-line handwritten arabic script.
+\newblock In {\em Frontiers in Handwriting Recognition (ICFHR), 2014 14th
+  International Conference on}, pages 417--422. IEEE, 2014.
+
+\bibitem{kour2014fast}
+George Kour and Raid Saabne.
+\newblock Fast classification of handwritten on-line arabic characters.
+\newblock In {\em Soft Computing and Pattern Recognition (SoCPaR), 2014 6th
+  International Conference of}, pages 312--318. IEEE, 2014.
+
+\bibitem{hadash2018estimate}
+Guy Hadash, Einat Kermany, Boaz Carmeli, Ofer Lavi, George Kour, and Alon
+  Jacovi.
+\newblock Estimate and replace: A novel approach to integrating deep neural
+  networks with existing applications.
+\newblock {\em arXiv preprint arXiv:1804.09028}, 2018.
+
+\end{thebibliography}
+
+
+\end{document}

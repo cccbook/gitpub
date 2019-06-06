@@ -13,6 +13,18 @@ $ pandoc --filter pandoc-citeproc --bibliography=paper.bib --variable classoptio
 於是我決定將該專案延伸後成為一個正式的 github 專案！
 
 
+## 安裝
+
+* pandoc : choco install pandoc
+    * windows 版的 pandoc-citeproc 預設就會安裝 (內文有引用才會出現在文獻區！)
+* Windows : 
+    * MikTex (TexLive)
+
+## pandoc 使用
+
+* https://pandoc.org/MANUAL.html#general-writer-options
+    * 注意看 General writer options
+
 ## bat 失敗
 
 ```

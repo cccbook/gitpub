@@ -1,0 +1,64 @@
+h1, h2, h3 {
+  margin: 10px 0px;
+  font-family: 標楷體, "Times New Roman";
+  padding: 5px, 10px;
+}
+
+body {
+  margin: 15px;
+}
+
+header {
+  text-align: center;
+}
+
+p {
+  line-height: 150%;
+}
+
+img {
+  margin: auto;
+  display: block;
+}
+
+div.sourceCode {
+  /* We first create a flex layout context */
+  display: flex;
+  /* Then we define the flow direction 
+      and if we allow the items to wrap 
+    * Remember this is the same as:
+    * flex-direction: row;
+    * flex-wrap: wrap;
+    */
+  flex-flow: row wrap;
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
+}
+
+.sourceCode pre {
+  border: 1px solid #888888;
+  line-height: 160%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  font-size: 120%;
+}
+
+a {
+  color: #3366bb;
+  text-decoration: none;
+}
+
+table th {
+  border-bottom: 1px solid #111111;
+}
+
+table th, table td {
+  padding: 5px 10px;
+}
+
+table {
+  border-top: 1px solid #111111;
+  border-bottom: 1px solid #111111;
+  margin: auto;
+}

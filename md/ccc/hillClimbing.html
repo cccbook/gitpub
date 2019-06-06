@@ -75,9 +75,18 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    var mathElements = document.getElementsByClassName("math");
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
+    }}});</script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" />
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
+  <link rel="stylesheet" type="text/css" href="paper.css">
 </head>
 <body>
 <header id="title-block-header">
@@ -85,9 +94,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p class="author">陳鍾誠</p>
 <p class="date">2019 年 6 月 5 日</p>
 </header>
-<h1 id="摘要">摘要</h1>
+<h2 id="摘要">摘要</h2>
 <p>爬山演算法 (Hill Climbing) 是一種最簡單的優化算法，該方法就像模擬人類爬山時的行為而設計的，因此稱為爬山演算法。</p>
-<h1 id="簡介">簡介</h1>
+<h2 id="簡介">簡介</h2>
 <p>以下是「爬山演算法」 (Hill-Climbing Algorithm) 的一個簡易版本，其方法超簡單，就是一直看旁邊有沒有更好的解，如果有就移過去。然後反覆的作這樣的動作，直到旁邊的解都比現在的更差時，程式就停止，然後將那個位於山頂的解傳回，就完成了。</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1">Algorithm <span class="at">HillClimbing</span>(f<span class="op">,</span> x)</a>
 <a class="sourceLine" id="cb1-2" title="2">  x <span class="op">=</span> 隨意設定一個解。</a>
@@ -97,13 +106,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb1-6" title="6">  <span class="cf">return</span> x<span class="op">;</span></a>
 <a class="sourceLine" id="cb1-7" title="7">end</a></code></pre></div>
 <p>當然、這種演算法只能找到「局部最佳解」(local optimal)，當整個空間有很多山頂的時候，這種方法會爬到其中一個山頂就停了，並不一定會爬到最高的山頂。</p>
-<h1 id="圖表">圖表</h1>
-<figure>
-<img src="img/GoogleGraph2D.jpg" alt="在 Google 輸入 x^2+3x+5 這個算式，您會看到下列圖形" /><figcaption>在 Google 輸入 x^2+3x+5 這個算式，您會看到下列圖形</figcaption>
-</figure>
-<h1 id="演算法">演算法</h1>
+<h2 id="文獻回顧">文獻回顧</h2>
+<p>必須引用 (<span class="citation" data-cites="pizza2000identification">Pizza et al. (2000)</span>) 才會出現在最後的 Reference 裏。</p>
+<h2 id="圖片">圖片</h2>
+<p>程式究竟要怎麼爬山呢？且讓我們用一張圖來看看。假如我們在 Google 裏輸入一個算式，Google 會幫我們畫出該函數。舉例而言，如果我在 Google 輸入 <span class="math inline">x^2+3x+5</span> 這個算式，您會看到如 <a href="#image1">圖1</a> 所示的結果。</p>
+<p><img src="img/GoogleGraph2D.jpg" /></p>
+<h2 id="表格">表格</h2>
+<h2 id="tables">Tables</h2>
+<p>Table 1: Example Markdown table</p>
+<table>
+<thead>
+<tr class="header">
+<th>欄位</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://www.cakeresume.com/f5611f">履歷</a></td>
+<td>to <a href="cccForStudent.md">學生</a> , <a href="cccForProgrammer.md">程式人</a> , <a href="cccForProfessor.md">教授</a> , <a href="cccForCompany.md">公司</a></td>
+</tr>
+<tr class="even">
+<td>職務</td>
+<td><a href="http://www.nqu.edu.tw/">金門大學</a> / <a href="http://www.nqu.edu.tw/educsie/index.php">資訊工程</a> / <a href="http://www.nqu.edu.tw/educsie/index.php?act=blog&amp;code=list&amp;ids=4">教師</a></td>
+</tr>
+<tr class="odd">
+<td>專長</td>
+<td>寫程式 ( <a href="https://nodejs.org/">NodeJS</a> + <a href="js1.md">JavaScript</a> + <a href="c1.md">C</a> ) , 寫書 ( <a href="https://zh.wikipedia.org/wiki/Markdown">Markdown</a> )</td>
+</tr>
+<tr class="even">
+<td>聯絡</td>
+<td>ccckmit@gmail.com , <a href="https://www.facebook.com/ccckmit">Facebook</a></td>
+</tr>
+<tr class="odd">
+<td>帳號</td>
+<td><a href="https://github.com/ccckmit">Github</a> , <a href="http://www.slideshare.net/ccckmit/">SlideShare</a> , <a href="https://www.youtube.com/user/ccckmit">YouTube</a></td>
+</tr>
+<tr class="even">
+<td>作品</td>
+<td><a href="course.md">課程</a> , <a href="booklist.md">書籍</a> , <a href="codelist.md">程式</a> , <a href="novel.md">小說</a> , <a href="article.md">散文</a> , <a href="../poem/">詩</a> , <a href="../slide/">十 分鐘系列</a></td>
+</tr>
+<tr class="odd">
+<td>研究</td>
+<td><a href="../bot/">聊天機器人</a> , <a href="../mt/">機器翻譯</a> , <a href="../artilang/">人造語</a> , <a href="../mdo/">Markdown 物件格式應用</a></td>
+</tr>
+<tr class="even">
+<td>關注</td>
+<td><a href="tool.md">軟體工具</a> , <a href="topic.md">研究主題</a> , <a href="language.md">程式語言</a> , <a href="turingAward.md">圖靈獎</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="演算法">演算法</h2>
 <p>數學式</p>
-<p><br /><span class="math display">∫<sub>0</sub><sup><em>x</em></sup><em>f</em>(<em>x</em>)<em>d</em><em>x</em></span><br /></p>
-<h1 id="參考文獻">參考文獻</h1>
+<p><span class="math display">
+\int_0^x f(x) dx
+</span></p>
+<p>嵌入式 : <span class="math inline">\sum_{i=1}^n p(i) \log \; p(i)</span></p>
+<p><span class="math display">
+\frac{p(i) log p(i)}{\sqrt{n}}
+</span></p>
+<p><span class="math display">
+\frac{-b \pm \sqrt{b^2-4ac}}{2a}
+</span></p>
+<h2 id="參考文獻" class="unnumbered">參考文獻</h2>
+<div id="refs" class="references" role="doc-bibliography">
+<div id="ref-pizza2000identification">
+<p>Pizza, Mariagrazia, Vincenzo Scarlato, Vega Masignani, Marzia Monica Giuliani, Beatrice Arico, Maurizio Comanducci, Gary T Jennings, et al. 2000. “Identification of Vaccine Candidates Against Serogroup B Meningococcus by Whole-Genome Sequencing.” <em>Science</em> 287 (5459): 1816–20.</p>
+</div>
+</div>
 </body>
 </html>
